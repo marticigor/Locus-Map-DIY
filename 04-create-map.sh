@@ -20,5 +20,5 @@ osmosis/bin/osmosis \
 	--rx file="$ROUTES_FILE" --merge \
 	$SRTM \
 	$NEWS \
-	--mapfile-writer tag-conf-file=tag-mapping-tourist.xml type=$MAPSFORGE_TYPE file=$MAP_FILE
+	--mapfile-writer tag-conf-file=openandromaps-tagmapping-urban.xml type=$MAPSFORGE_TYPE file=$MAP_FILE tag-values=true preferred-languages=hr
 
