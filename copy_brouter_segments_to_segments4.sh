@@ -11,21 +11,23 @@ mkdir -p $currentdir/segments4
 src=$currentdir/brouter-master/misc/scripts/mapcreation/segments # Source directory
 dst=$currentdir/segments4 # Destination directory
 
-icp() {
-  f="${1}";
-  [ -d "$f" ] && {
-    [ ! -d "${dst}${f#$src}" ] && mkdir -p "${dst}${f#$src}";
-    return
-  }
+# icp() {
+#   f="${1}";
+#   [ -d "$f" ] && {
+#     [ ! -d "${dst}${f#$src}" ] && mkdir -p "${dst}${f#$src}";
+#     return
+#   }
 
-  [ ! -f "${dst}/${f#$src/}" ] && { cp -a "${f}" "${dst}/${f#$src/}"; return; }
-  fsizeSrc=$( stat -c %s "$f" )
-  fsizeDst=$( stat -c %s "${dst}/${f#$src/}" )
-  [ ${fsizeDst} -lt ${fsizeSrc} ] && cp -a "${f}" "${dst}/${f#$src/}"
-}
+#   [ ! -f "${dst}/${f#$src/}" ] && { cp -a "${f}" "${dst}/${f#$src/}"; return; }
+#   fsizeSrc=$( stat -c %s "$f" )
+#   fsizeDst=$( stat -c %s "${dst}/${f#$src/}" )
+#   [ ${fsizeDst} -lt ${fsizeSrc} ] && cp -a "${f}" "${dst}/${f#$src/}"
+# }
 
-export -f icp
-export src
-export dst
+# export -f icp
+# export src
+# export dst
 
-find ${src} -exec bash -c 'icp "$0"' {} \;
+# find ${src} -exec bash -c 'icp "$0"' {} \;
+
+yes | cp -rf $src/* $dst
