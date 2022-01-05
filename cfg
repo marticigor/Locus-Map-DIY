@@ -1,7 +1,6 @@
 #!/bin/bash
 CONTINENT=europe
-COUNTRY=croatia
-#COUNTRY=slovenia
+declare -ga StringArray=("croatia" "slovenia")
 PBF_FILE=${COUNTRY}-latest.osm.pbf
 MAP_FILE=${COUNTRY}.osm.map
 MF_POI_FILE=${COUNTRY}.poi
