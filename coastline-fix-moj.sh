@@ -74,10 +74,14 @@ fi
 #args=(--rb file=${COUNTRY}_merge.pbf --rx file="$ROUTES_FILE")
 args=(--rb file="$PBF_FILE" --rx file="${COUNTRY}_sea.osm" --sort --merge --rx file="./COAST_TEMP/${COUNTRY}_land1.osm" --sort --merge --rx file="$ROUTES_FILE")
 argsnumber=2
-for file in *$COUNTRY*view*; do
+for file in *$COUNTRY*view1*view3*.pbf; do
 	args+=(--rb "$file")
 	argsnumber=$((argsnumber+1))
 done
+# for file in *$COUNTRY*local-source*; do
+# 	args+=(--rb "$file")
+# 	argsnumber=$((argsnumber+1))
+# done
 i=0
 while [ $i -lt $((argsnumber-1)) ]; do
 	args+=(--sort --merge)
